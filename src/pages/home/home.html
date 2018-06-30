@@ -1,14 +1,28 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
+
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>Home</ion-title>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngIf="user">
+    <ion-card-header>{{ user.name }}</ion-card-header>
+    <img [src]="user.picture" />
+    <ion-card-content>
+      <!-- <p>Email: {{ user.email }}</p>
+      <p>First Name: {{ user.name }}</p> -->
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button round (click)="logout()">Logout</button>
+  <button ion-button round (click)="showMap()">Show Map</button>
 </ion-content>
